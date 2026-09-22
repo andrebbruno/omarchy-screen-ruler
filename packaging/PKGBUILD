@@ -1,0 +1,32 @@
+# Maintainer: Andre Bruno
+pkgname=omarchy-screen-ruler
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="Screen Ruler for Omarchy — measure anything on screen in pixels or centimetres, or click to measure what is under the pointer (PowerToys Screen Ruler, ported)"
+arch=('any')
+url="https://github.com/andrebbruno/omarchy-screen-ruler"
+license=('MIT')
+depends=('python' 'quickshell' 'hyprland' 'grim')
+optdepends=('wl-clipboard: copy the measurement'
+            'gum: menu fallback outside Omarchy')
+makedepends=('python-build' 'python-installer' 'python-wheel' 'python-setuptools')
+checkdepends=('python-pytest')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
+sha256sums=('SKIP')
+
+build() {
+  cd "$pkgname-$pkgver"
+  python -m build --wheel --no-isolation
+}
+
+check() {
+  cd "$pkgname-$pkgver"
+  PYTHONPATH="$PWD" python -m pytest tests -q
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  python -m installer --destdir="$pkgdir" dist/*.whl
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
+}

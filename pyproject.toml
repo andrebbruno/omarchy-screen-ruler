@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "omarchy-screen-ruler"
+version = "0.1.0"
+description = "Screen ruler for Omarchy: drag to measure anything on screen in pixels or centimetres, or click to measure what is under the pointer."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+authors = [{ name = "Andre Bruno" }]
+keywords = ["omarchy", "powertoys", "screen-ruler", "measure", "hyprland", "quickshell"]
+classifiers = [
+  "Environment :: X11 Applications",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3",
+  "Topic :: Utilities",
+]
+dependencies = []
+
+[project.scripts]
+omarchy-screen-ruler = "oruler.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/andrebbruno/omarchy-screen-ruler"
+
+[tool.setuptools.packages.find]
+include = ["oruler*"]
+
+[tool.setuptools.package-data]
+oruler = ["qml/*.qml"]
