@@ -1,0 +1,22 @@
+pkgbase = omarchy-screen-ruler
+	pkgdesc = Screen Ruler for Omarchy — measure anything on screen in pixels or centimetres, or click to measure what is under the pointer (PowerToys Screen Ruler, ported)
+	pkgver = 0.1.0
+	pkgrel = 1
+	url = https://github.com/andrebbruno/omarchy-screen-ruler
+	arch = any
+	license = MIT
+	checkdepends = python-pytest
+	makedepends = python-build
+	makedepends = python-installer
+	makedepends = python-wheel
+	makedepends = python-setuptools
+	depends = python
+	depends = quickshell
+	depends = hyprland
+	depends = grim
+	optdepends = wl-clipboard: copy the measurement
+	optdepends = gum: menu fallback outside Omarchy
+	source = omarchy-screen-ruler-0.1.0.tar.gz::https://github.com/andrebbruno/omarchy-screen-ruler/archive/v0.1.0.tar.gz
+	sha256sums = b488207b942e643c7108139f8b31cc962e5132d18433dd2072097f7febbb43d8
+
+pkgname = omarchy-screen-ruler

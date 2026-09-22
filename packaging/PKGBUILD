@@ -12,7 +12,7 @@ optdepends=('wl-clipboard: copy the measurement'
 makedepends=('python-build' 'python-installer' 'python-wheel' 'python-setuptools')
 checkdepends=('python-pytest')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
-sha256sums=('SKIP')
+sha256sums=('b488207b942e643c7108139f8b31cc962e5132d18433dd2072097f7febbb43d8')
 
 build() {
   cd "$pkgname-$pkgver"
